@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+</head>
+<body>
+<form action="{% url 'deposit' %}" method="post">
+  {% csrf_token %}
+  {{ d }}
+  {{ e }}
+  <table align="center">
+    <tr><th>Customer ID</th><th><input type="text" name="cid"></th></tr>
+    <tr><th>Transaction Type</th><th><input type="radio" name="type" value="Deposit">Deposit</th></tr>
+    <tr><th>Amount</th><th><input type="text" name="Amt"></th></tr>
+    <tr><th>Transaction Date</th><th><input type="date" name="date"></th></tr>
+    <tr><th colspan="2"><input type="submit" value="Deposit" ></th> </tr>
+  </table>
+</form>
+</body>
+</html>

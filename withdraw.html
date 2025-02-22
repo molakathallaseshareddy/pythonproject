@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw</title>
+</head>
+<body>
+<form action="{% url 'withdraw' %}" method="post">
+    {% csrf_token %}
+    {{ w }}
+    {{ res }}
+    <table align="center">
+        <tr><th>Customer Id </th><th><input type="text" name="cid"></th></tr>
+        <tr><th>Transaction Type </th><th><input type="radio" name="type" value="Withdraw">Withdraw</th></tr>
+        <tr><th>Amount </th><th><input type="text" name="Amt"></th></tr>
+        <tr><th>Date </th><th><input type="date" name="date"></th></tr>
+        <tr><th colspan="2"><input type="submit" value="Withdraw"></th></tr>
+    </table>
+</form>
+</body>
+</html>

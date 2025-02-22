@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Transaction Information</title>
+</head>
+<body>
+<form action="{% url 'cust' %}" method="post">
+    {% csrf_token %}
+    {{ r }}
+    <table align="center">
+        <tr><th>Customer ID</th><th><input type="text" name="cid"></th></tr>
+        <tr><th colspan="2"><input type="submit" value="Submit"></th> </tr>
+    </table>
+    <table align="center">
+        <tr><th>Customer ID </th><th>Transactions</th><th>Amount</th><th>Date</th></tr>
+        {% for i in res %}
+        <tr><th>{{ i.cid }}</th><th>{{ i.type }}</th><th>{{ i.Amt }}</th><th>{{ i.date }}</th></tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>
